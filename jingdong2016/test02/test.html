@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 购物车</title>
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"  href="css/shop.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <script src="js/shop.js"></script>
+</head>
+<body ng-app="myApp">
+<div class="container">
+    <div ng-controller="myCtrl">
+        <div ng-repeat="shop in shopList" >
+        <input type="checkbox" ng-model=shop.key><span>店铺：</span>
+            <div  class="list">
+                <div class="name">
+                    <input type="checkbox" ng-model=shop.key>
+                    <img src={{shop.img}}>
+                    <span>{{shop.name}}</span>
+                </div>
+                <div class="size">
+                    颜色分类：{{shop.color}}
+                    <br>
+                    尺码：{{shop.size}}
+                </div>
+                <div class="pri">
+                    <span class="price">{{shop.price|currency}}</span>
+                    <br>
+                    <span >{{shop.newprice|currency}}</span>
+                    <br/>
+                    <span class="chuxiao"></span>卖家促销
+                </div>
+                <div class="dele">
+                    <span>
+                        <button ng-click="reduce($index)">-</button>
+                        <input type="number"  ng-model="shop.num" ng-change="change($index)">
+                        <button ng-click="add($index)">+</button>
+                        <span>{{shop.price*shop.num|currency}}</span>
+                    </span>
+
+                    <button class="btn btn-default" ng-click="remove($index)">删除</button>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <span >移入收藏夹</span>
+            <span >分享</span>
+            <span class="r">合计：<span ng-bind="allSum()"></span></span>
+            <span class="r">已选商品：<span ng-bind="allNum()"></span>件</span>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

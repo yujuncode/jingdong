@@ -1,0 +1,46 @@
+*{
+    padding:0;
+    margin:0;
+}
+.l{float:left}
+.r{float:right}
+.price{
+    text-decoration: line-through;
+}
+.list{
+    margin-bottom: 30px;
+    border:solid 1px burlywood;
+    width:1140px;
+    height:67px;
+}
+.name{
+    width:25%;
+    float:left;
+}
+.size{
+    width:20%;
+    float:left;
+}
+.pri{
+    width:15%;
+    float:left;
+}
+.dele{
+    width:35%;
+    float:left;
+}
+.foot{
+    width:1140px;
+    height:67px;
+    float:right;
+    background:gray;
+    width:100%;
+    line-height:50px;
+}
+
+span{
+    padding-left:20px;padding-right:20px;
+}
+.chuxiao{
+    padding-left:0px;
+}
